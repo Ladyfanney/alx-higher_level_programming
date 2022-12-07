@@ -7,4 +7,4 @@ def uppercase(str):
             continue
         new_str += str[i]
 
-        print('{0}'.format(new_str))
+    print('{0}'.format(new_str))
