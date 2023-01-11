@@ -26,8 +26,8 @@ void print_python_bytes(PyObject *p)
     printf("[.] bytes object info\n");
     if (!PyBytes_Check(p))
     {
-	    printf("  [ERROR] Invalid Bytes Object\n");
-	    return;
+	printf("  [ERROR] Invalid Bytes Object\n");
+	return;
     }
     
     clone_size = PyBytes_Size(p);
@@ -78,22 +78,22 @@ void print_python_list(PyObject *p)
 
 void print_python_float(PyObject *p)
 {
-     PyFloatObject *clone = (PyFloatObject *) p;
-     float n = 0;
-     
-     printf("[.] float object info\n");
-     if (!PyFloat_Check(p))
-     {
+    PyFloatObject *clone = (PyFloatObject *) p;
+    float n = 0;
+    
+    printf("[.] float object info\n");
+    if (!PyFloat_Check(p))
+    {
 	printf("  [ERROR] Invalid Float Object\n");
 	return;
-     }
-     
-     n = clone->ob_fval;
-     
-     if ((int) n == n)
-	 printf("  value: %0.1f\n", clone->ob_fval);
-     else
-	 printf("  value: %0.16g\n", clone->ob_fval);
-     
-     fflush(stdout);
+    }
+    
+    n = clone->ob_fval;
+    
+    if ((int) n == n)
+	printf("  value: %0.1f\n", clone->ob_fval);
+    else
+	printf("  value: %0.16g\n", clone->ob_fval);
+    
+    fflush(stdout);
 }
