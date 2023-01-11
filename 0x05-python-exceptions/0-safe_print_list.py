@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-import random
-number = random.randint(-10, 10)
-if number > 0:
-    print("{:d} is positive".format(number))
-elif number == 0:
-    print("{:d} is zero".format(number))
-else:
-    print("{:d} is negative".format(number))
+def safe_print_list(my_list=[], x=0):
+    "prints x elements of a list"
+    i = pichu = 0
+    for i in range(x):
+        try:
+            print("{}".format(my_list[i]), end="")
+            pichu += 1
+        except:
+            continue
+    print()
+    return pichu
