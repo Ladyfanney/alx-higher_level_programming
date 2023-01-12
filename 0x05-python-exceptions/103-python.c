@@ -21,7 +21,7 @@ void print_hexn(const char *str, int n)
 void print_python_bytes(PyObject *p)
 {
     PyBytesObject *clone = (PyBytesObject *) p;
-    int calc_bytes, clone_size = 0;
+        int calc_bytes, clone_size = 0;
     
     printf("[.] bytes object info\n");
     if (!PyBytes_Check(p))
